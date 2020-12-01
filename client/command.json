@@ -1,0 +1,8 @@
+{
+    "description": "Hello world command", 
+    "weight": 222,
+    "containers": [
+        {"customer_id": "OOO Containers", "origin": "Moscow", "user_id": "OOO User"}
+    ], 
+    "vessel_id": "Na verkhu" 
+}

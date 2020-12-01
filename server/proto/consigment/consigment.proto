@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package consigment;
+
+message Container {
+    string id = 1; 
+    string customer_id = 2; 
+    string origin = 3;  //destination
+    string user_id = 4; //who transported
+}
+
+message Command {
+    string id = 1;
+    string description = 2;
+    int32 weight = 3;   // container weight
+    repeated Container containers = 4;
+    string vessel = 5;  //delivering ship
+}
+
+
+message Response {
+    bool created = 1;
+    Command command = 2;
+    repeated Command commands = 3;
+}
+
+message GetRequest {}
+
+service ShippingService {
+    rpc CreateCommand(Command) returns(Response) {}
+    rpc  GetAllCommands (GetRequest) returns (Response) {}
+}
+
+
